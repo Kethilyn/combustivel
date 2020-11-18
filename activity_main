@@ -1,0 +1,40 @@
+public class MainActivity extends AppCompatActivity {
+    private EditText edetanol, edgasolina;
+    private TextView txtresultado;
+
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        edetanol= findViewById(R.id.edetanol);
+        edgasolina= findViewById(R.id.edegasolina);
+        txtresultado= findViewById(R.id.txtresultado);
+
+    }
+
+    public void calcularPreco(View view) {
+
+        Double precoetanol= Double.parseDouble(edetanol.getText().toString());
+        Double precogasolina=Double.parseDouble(edgasolina.getText().toString());
+
+        Double resultado = precoetanol/precogasolina;
+
+        if (resultado >= 0.7){
+            txtresultado.setText("Compensa utilizar mais gasolina ");
+
+        }else {
+            txtresultado.setText("Compensa utilizar mais etanol");
+        }
+
+
+
+
+    }
+
+
+}
